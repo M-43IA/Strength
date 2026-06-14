@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-box {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 40px;
+    width: 100%;
+}
+
+/* Header */
+.login-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.google-logo {
+    width: 32px;
+    height: 32px;
+}
+
+.login-header h1 {
+    font-size: 28px;
+    color: #3c4043;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Welcome Text */
+.welcome-text {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.welcome-text h2 {
+    font-size: 24px;
+    color: #202124;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.welcome-text p {
+    font-size: 14px;
+    color: #5f6368;
+}
+
+/* Input Groups */
+.input-group {
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+}
+
+.input-group.hidden {
+    display: none;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px 16px 12px 45px;
+    font-size: 14px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.2s ease;
+    background: #f8f9fa;
+    color: #202124;
+}
+
+.input-field:hover {
+    background: #f8f9fa;
+    border-color: #dadce0;
+}
+
+.input-field:focus {
+    background: white;
+    border-color: #1f71c6;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), inset 0 1px 2px rgba(32, 33, 36, 0.15);
+}
+
+.input-field::placeholder {
+    color: #bdc1c6;
+}
+
+.input-icon,
+.password-toggle {
+    position: absolute;
+    left: 12px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.input-icon svg,
+.password-toggle svg {
+    width: 100%;
+    height: 100%;
+}
+
+.password-toggle {
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    opacity: 0.7;
+}
+
+.error-message {
+    color: #d33b27;
+    font-size: 12px;
+    margin-top: 8px;
+    min-height: 16px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.input-group.error .input-field {
+    border-color: #d33b27;
+}
+
+.helper-text {
+    font-size: 12px;
+    color: #5f6368;
+    margin-top: 8px;
+    min-height: 16px;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: none;
+    letter-spacing: 0.25px;
+}
+
+.btn-secondary {
+    color: #1f71c6;
+    background: white;
+    border: 1px solid #dadce0;
+    flex: 1;
+}
+
+.btn-secondary:hover {
+    background: #f8f9fa;
+    border-color: #dadce0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), inset 0 1px 2px rgba(32, 33, 36, 0.15);
+}
+
+.btn-secondary:active {
+    border-color: #4285f4;
+    background: white;
+}
+
+.btn-primary {
+    color: white;
+    background: #1f71c6;
+    flex: 1;
+}
+
+.btn-primary:hover {
+    background: #1765cc;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:active {
+    background: #1558b7;
+}
+
+.btn-primary:disabled {
+    background: #dadce0;
+    color: #5f6368;
+    cursor: not-allowed;
+}
+
+/* Forgot Section */
+.forgot-section {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.forgot-link {
+    color: #1f71c6;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.forgot-link:hover {
+    color: #1558b7;
+    text-decoration: underline;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #dadce0;
+}
+
+#staySignedIn {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    cursor: pointer;
+    accent-color: #1f71c6;
+}
+
+.checkbox-group label {
+    font-size: 14px;
+    color: #202124;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Footer */
+.footer {
+    margin-top: 32px;
+    padding-top: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .login-box {
+        padding: 30px 20px;
+    }
+
+    .welcome-text h2 {
+        font-size: 20px;
+    }
+
+    .button-group {
+        flex-direction: column-reverse;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .footer-links {
+        gap: 16px;
+    }
+}
+
+/* Loading State */
+.btn-primary.loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn-primary.loading::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.6s linear infinite;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Fade animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.input-group {
+    animation: slideUp 0.3s ease;
+}
